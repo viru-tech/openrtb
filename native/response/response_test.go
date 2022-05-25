@@ -32,6 +32,8 @@ var _ = Describe("Response", func() {
 })
 
 func TestSuite(t *testing.T) {
+	t.Parallel()
+
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "openrtb/native/response")
 }

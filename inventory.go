@@ -40,8 +40,8 @@ type App struct {
 // an application).  A bid request must not contain both a site object and an app object.
 type Site struct {
 	Inventory
-	Page     string `json:"page,omitempty"`   // URL of the page
-	Referrer string `json:"ref,omitempty"`    // Referrer URL
-	Search   string `json:"search,omitempty"` // Search string that caused naviation
-	Mobile   int    `json:"mobile,omitempty"` // Mobile ("1": site is mobile optimised)
+	Page     string `json:"page,omitempty"`   // URL of the page.
+	Referrer string `json:"ref,omitempty"`    // Referrer URL.
+	Search   string `json:"search,omitempty"` // Search string that caused naviation.
+	Mobile   int    `json:"mobile,omitempty"` // Mobile ("1": site is mobile optimized).
 }

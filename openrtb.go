@@ -834,6 +834,6 @@ type Regulations struct {
 // These are typically used in an array for an impression where multiple sizes are permitted.
 type Format struct {
 	Width  int             `json:"w,omitempty"` // Width in device independent pixels (DIPS).
-	Height int             `json:"h,omitempty"` //Height in device independent pixels (DIPS).
+	Height int             `json:"h,omitempty"` // Height in device independent pixels (DIPS).
 	Ext    json.RawMessage `json:"ext,omitempty"`
 }

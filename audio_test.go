@@ -53,5 +53,4 @@ var _ = Describe("Audio", func() {
 			CompanionTypes: []CompanionType{CompanionTypeStatic, CompanionTypeHTML},
 		}).Validate()).To(Equal(ErrInvalidAudioNoMIMEs))
 	})
-
 })

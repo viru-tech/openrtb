@@ -75,5 +75,4 @@ var _ = Describe("BidRequest", func() {
 		Expect((&BidRequest{ID: "A", Impressions: []Impression{{ID: "1", Banner: &Banner{}}}, App: &App{}}).Validate()).NotTo(HaveOccurred())
 		Expect(subject.Validate()).NotTo(HaveOccurred())
 	})
-
 })

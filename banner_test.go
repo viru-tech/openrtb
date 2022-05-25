@@ -23,5 +23,4 @@ var _ = Describe("Banner", func() {
 			VCM:          1,
 		}))
 	})
-
 })

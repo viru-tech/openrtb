@@ -49,11 +49,12 @@ type Bid struct {
 	Ext         json.RawMessage     `json:"ext,omitempty"`
 }
 
-// Validate required attributes
+// Validate required attributes.
 func (bid *Bid) Validate() error {
 	if bid.ID == "" {
 		return ErrInvalidBidNoID
-	} else if bid.ImpID == "" {
+	}
+	if bid.ImpID == "" {
 		return ErrInvalidBidNoImpID
 	}
 
