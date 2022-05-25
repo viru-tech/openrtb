@@ -60,11 +60,6 @@ linters-settings:
         paramsOnly: true
       rangeValCopy:
         sizeThreshold: 32
-  tagliatelle:
-    case:
-      use-field-name: true
-      rules:
-        json: snake
 
 linters:
   enable-all: true
@@ -87,6 +82,7 @@ linters:
     - gomoddirectives
     - varnamelen
     - goimports
+    - tagliatelle
 
 issues:
   exclude:
