@@ -5,12 +5,12 @@ import (
 	"errors"
 )
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidAudioNoMIMEs = errors.New("openrtb: audio has no mimes")
 )
 
-// Audio object must be included directly in the impression object
+// Audio object must be included directly in the impression object.
 type Audio struct {
 	MIMEs          []string            `json:"mimes"`                 // Content MIME types supported.
 	MinDuration    int                 `json:"minduration,omitempty"` // Minimum video ad duration in seconds
@@ -49,7 +49,7 @@ func (a *Audio) MarshalJSON() ([]byte, error) {
 	return json.Marshal((*jsonAudio)(a))
 }
 
-// UnmarshalJSON custom unmarshalling with normalization
+// UnmarshalJSON custom unmarshalling with normalization.
 func (a *Audio) UnmarshalJSON(data []byte) error {
 	var h jsonAudio
 	if err := json.Unmarshal(data, &h); err != nil {
