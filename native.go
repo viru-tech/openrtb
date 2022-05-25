@@ -22,6 +22,7 @@ type Native struct {
 
 type jsonNative Native
 
+//nolint:gochecknoglobals
 var (
 	requestBytes = []byte("request")
 	nullBytes    = []byte("null")

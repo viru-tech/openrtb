@@ -35,7 +35,7 @@ type Audio struct {
 
 type jsonAudio Audio
 
-// Validate the object
+// Validate validates the audio object.
 func (a *Audio) Validate() error {
 	if len(a.MIMEs) == 0 {
 		return ErrInvalidAudioNoMIMEs
@@ -43,7 +43,7 @@ func (a *Audio) Validate() error {
 	return nil
 }
 
-// MarshalJSON custom marshalling with normalization
+// MarshalJSON custom marshalling with normalization.
 func (a *Audio) MarshalJSON() ([]byte, error) {
 	a.normalize()
 	return json.Marshal((*jsonAudio)(a))

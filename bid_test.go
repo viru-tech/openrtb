@@ -34,5 +34,4 @@ var _ = Describe("Bid", func() {
 		Expect((&Bid{ID: "BIDID"}).Validate()).To(Equal(ErrInvalidBidNoImpID))
 		Expect(subject.Validate()).NotTo(HaveOccurred())
 	})
-
 })

@@ -2,7 +2,7 @@ package openrtb
 
 import "encoding/json"
 
-// ContentCategory as defined in section 5.1
+// ContentCategory as defined in section 5.1.
 type ContentCategory string
 
 // ContentCategory values.
@@ -440,7 +440,7 @@ const (
 // CreativeAttribute as defined in section 5.3.
 type CreativeAttribute int
 
-// 5.3 Creative Attributes
+// 5.3 Creative Attributes.
 const (
 	CreativeAttributeAudioAdAutoPlay                 CreativeAttribute = 1
 	CreativeAttributeAudioAdUserInitiated            CreativeAttribute = 2
@@ -514,7 +514,7 @@ const (
 // Protocol as defined in section 5.8.
 type Protocol int
 
-// 5.8 Video and Audio Bid Response Protocols
+// 5.8 Video and Audio Bid Response Protocols.
 const (
 	ProtocolUnknown       Protocol = 0
 	ProtocolVAST1         Protocol = 1
@@ -625,7 +625,7 @@ const (
 // ContentContext as defined in section 5.18.
 type ContentContext int
 
-// UnmarshalJSON implements json.Unmarshaler
+// UnmarshalJSON implements json.Unmarshaler.
 func (n *ContentContext) UnmarshalJSON(data []byte) (err error) {
 	var v int
 
@@ -642,7 +642,7 @@ func (n *ContentContext) UnmarshalJSON(data []byte) (err error) {
 	return nil
 }
 
-// 5.18 Content Context
+// 5.18 Content Context.
 const (
 	ContentContextVideo       ContentContext = 1
 	ContentContextGame        ContentContext = 2
@@ -656,7 +656,7 @@ const (
 // IQGRating as defined in section 5.19.
 type IQGRating int
 
-// 5.19 IQG Media Ratings
+// 5.19 IQG Media Ratings.
 const (
 	IQGRatingUnknown IQGRating = 0
 	IQGRatingAll     IQGRating = 1
@@ -667,7 +667,7 @@ const (
 // LocationType as defined in section 5.20.
 type LocationType int
 
-// 5.20 Location Type
+// 5.20 Location Type.
 const (
 	LocationTypeUnknown LocationType = 0
 	LocationTypeGPS     LocationType = 1

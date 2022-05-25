@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidBidNoID    = errors.New("openrtb: bid is missing ID")
 	ErrInvalidBidNoImpID = errors.New("openrtb: bid is missing impression ID")

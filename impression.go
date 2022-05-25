@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidImpNoID        = errors.New("openrtb: impression ID missing")
 	ErrInvalidImpMultiAssets = errors.New("openrtb: impression has multiple assets") // at least two out of Banner, Video, Native

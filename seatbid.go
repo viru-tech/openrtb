@@ -18,7 +18,7 @@ type SeatBid struct {
 	Ext   json.RawMessage `json:"ext,omitempty"`
 }
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidSeatBidBid = errors.New("openrtb: seatbid is missing bids")
 )

@@ -93,6 +93,7 @@ type (
 	}
 )
 
+//nolint:gochecknoglobals
 var (
 	nativeBytes = []byte("native")
 	nullBytes   = []byte("null")
