@@ -29,7 +29,12 @@ var _ = Describe("BidRequest", func() {
 				{
 					ID:     "1",
 					Secure: 1,
-					Banner: &Banner{Width: 300, Height: 250, Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated}},
+					Banner: &Banner{
+						Width:        300,
+						Height:       250,
+						Position:     AdPositionAboveFold,
+						BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated},
+					},
 				},
 			},
 			Site: &Site{

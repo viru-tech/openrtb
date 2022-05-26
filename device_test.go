@@ -15,8 +15,9 @@ var _ = Describe("Device", func() {
 	It("should parse correctly", func() {
 		Expect(subject).To(Equal(&Device{
 			DNT: 0,
-			UA:  "Mozilla/5.0 (iPhone; CPU iPhone OS 6_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3",
-			IP:  "123.145.167.189",
+			UA: "Mozilla/5.0 (iPhone; CPU iPhone OS 6_1 like Mac OS X) AppleWebKit/534.46 " +
+				"(KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3",
+			IP: "123.145.167.189",
 			Geo: &Geo{
 				Latitude:  35.012345,
 				Longitude: -115.12345,

@@ -25,6 +25,6 @@ var _ = Describe("PMP", func() {
 	})
 
 	It("should generate correctly", func() {
-		Expect(json.Marshal(&PMP{Deals: []Deal{{}}})).To(MatchJSON(`{"deals":[{"at":2}]}`))
+		Expect(json.Marshal(&PMP{Deals: []Deal{{}}})).To(MatchJSON(`{"deals":[{"at":2}]}`)) //nolint:errchkjson
 	})
 })
