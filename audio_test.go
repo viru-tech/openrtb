@@ -27,8 +27,27 @@ var _ = Describe("Audio", func() {
 			MaxBitrate:   1500,
 			Delivery:     []ContentDelivery{ContentDeliveryProgressive},
 			CompanionAds: []Banner{
-				{Width: 300, Height: 250, ID: "1234567893-1", Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated, CreativeAttributeWindowsDialogOrAlert}, ExpDirs: []ExpDir{ExpDirRight, ExpDirDown}},
-				{Width: 728, Height: 90, ID: "1234567893-2", Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated, CreativeAttributeWindowsDialogOrAlert}},
+				{
+					Width:    300,
+					Height:   250,
+					ID:       "1234567893-1",
+					Position: AdPositionAboveFold,
+					BlockedAttrs: []CreativeAttribute{
+						CreativeAttributeUserInitiated,
+						CreativeAttributeWindowsDialogOrAlert,
+					},
+					ExpDirs: []ExpDir{ExpDirRight, ExpDirDown},
+				},
+				{
+					Width:    728,
+					Height:   90,
+					ID:       "1234567893-2",
+					Position: AdPositionAboveFold,
+					BlockedAttrs: []CreativeAttribute{
+						CreativeAttributeUserInitiated,
+						CreativeAttributeWindowsDialogOrAlert,
+					},
+				},
 			},
 			APIs:           []APIFramework{APIFrameworkVPAID1, APIFrameworkVPAID2},
 			CompanionTypes: []CompanionType{CompanionTypeStatic, CompanionTypeHTML},
@@ -47,8 +66,27 @@ var _ = Describe("Audio", func() {
 			MaxBitrate:   1500,
 			Delivery:     []ContentDelivery{ContentDeliveryProgressive},
 			CompanionAds: []Banner{
-				{Width: 300, Height: 250, ID: "1234567893-1", Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated, CreativeAttributeWindowsDialogOrAlert}, ExpDirs: []ExpDir{ExpDirRight, ExpDirDown}},
-				{Width: 728, Height: 90, ID: "1234567893-2", Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated, CreativeAttributeWindowsDialogOrAlert}},
+				{
+					Width:    300,
+					Height:   250,
+					ID:       "1234567893-1",
+					Position: AdPositionAboveFold,
+					BlockedAttrs: []CreativeAttribute{
+						CreativeAttributeUserInitiated,
+						CreativeAttributeWindowsDialogOrAlert,
+					},
+					ExpDirs: []ExpDir{ExpDirRight, ExpDirDown},
+				},
+				{
+					Width:    728,
+					Height:   90,
+					ID:       "1234567893-2",
+					Position: AdPositionAboveFold,
+					BlockedAttrs: []CreativeAttribute{
+						CreativeAttributeUserInitiated,
+						CreativeAttributeWindowsDialogOrAlert,
+					},
+				},
 			},
 			CompanionTypes: []CompanionType{CompanionTypeStatic, CompanionTypeHTML},
 		}).Validate()).To(Equal(ErrInvalidAudioNoMIMEs))

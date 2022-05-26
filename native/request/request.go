@@ -59,10 +59,19 @@ type PlacementTypeID int
 
 // PlacementTypeID enum values.
 const (
-	PlacementTypeInFeed         PlacementTypeID = 1 // In the feed of content - for example as an item inside the organic feed/grid/listing/carousel
-	PlacementTypeAtomic         PlacementTypeID = 2 // In the atomic unit of the content - IE in the article page or single image page
-	PlacementTypeOutside        PlacementTypeID = 3 // Outside the core content - for example in the ads section on the right rail, as a banner-style placement near the content, etc.
-	PlacementTypeRecommendation PlacementTypeID = 4 // Recommendation widget, most commonly presented below the article content
+	// PlacementTypeInFeed is used when placement is in the feed of content,
+	// for example as an item inside the organic feed/grid/listing/carousel.
+	PlacementTypeInFeed PlacementTypeID = 1
+	// PlacementTypeAtomic is used when placement is in the atomic unit of the
+	// content, i.e. in the article page or single image page.
+	PlacementTypeAtomic PlacementTypeID = 2
+	// PlacementTypeOutside is used when placement is outside the core content,
+	// for example in the ads section on the right rail, as a banner-style
+	// placement near the content, etc.
+	PlacementTypeOutside PlacementTypeID = 3
+	// PlacementTypeRecommendation is used when placement is in a recommendation
+	// widget, most commonly presented below the article content.
+	PlacementTypeRecommendation PlacementTypeID = 4
 )
 
 // Request object represents a native type impression. Native ad units are intended to blend seamlessly into
