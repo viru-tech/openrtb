@@ -11,7 +11,7 @@ import (
 // standard.
 type NumberOrString int
 
-// UnmarshalJSON implements json.Unmarshaler
+// UnmarshalJSON implements json.Unmarshaler.
 func (n *NumberOrString) UnmarshalJSON(data []byte) (err error) {
 	var v int
 
@@ -34,7 +34,7 @@ func (n *NumberOrString) UnmarshalJSON(data []byte) (err error) {
 // standard.
 type StringOrNumber string
 
-// UnmarshalJSON implements json.Unmarshaler
+// UnmarshalJSON implements json.Unmarshaler.
 func (n *StringOrNumber) UnmarshalJSON(data []byte) error {
 	if len(data) >= 2 && data[0] == '"' && data[len(data)-1] == '"' {
 		var v string

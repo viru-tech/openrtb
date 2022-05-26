@@ -22,13 +22,13 @@ type Deal struct {
 
 type jsonDeal Deal
 
-// MarshalJSON custom marshalling with normalization
+// MarshalJSON custom marshalling with normalization.
 func (d *Deal) MarshalJSON() ([]byte, error) {
 	d.normalize()
 	return json.Marshal((*jsonDeal)(d))
 }
 
-// UnmarshalJSON custom unmarshalling with normalization
+// UnmarshalJSON custom unmarshalling with normalization.
 func (d *Deal) UnmarshalJSON(data []byte) error {
 	var h jsonDeal
 	if err := json.Unmarshal(data, &h); err != nil {

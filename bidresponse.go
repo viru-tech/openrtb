@@ -26,7 +26,7 @@ type BidResponse struct {
 	Ext        json.RawMessage `json:"ext,omitempty"`        // Custom specifications in JSon
 }
 
-// Validate required attributes
+// Validate validates required attributes of bid response.
 func (res *BidResponse) Validate() error {
 	if res.ID == "" {
 		return ErrInvalidRespNoID

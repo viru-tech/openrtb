@@ -429,7 +429,7 @@ const (
 // BannerType as defined in section 5.2.
 type BannerType int
 
-// 5.2 Banner Ad Types
+// 5.2 Banner Ad Types.
 const (
 	BannerTypeXHTMLText BannerType = 1
 	BannerTypeXHTML     BannerType = 2
@@ -464,7 +464,7 @@ const (
 // AdPosition as defined in section 5.4.
 type AdPosition int
 
-// 5.4 Ad Position
+// 5.4 Ad Position.
 const (
 	AdPositionUnknown    AdPosition = 0
 	AdPositionAboveFold  AdPosition = 1
@@ -478,7 +478,7 @@ const (
 // ExpDir as defined in section 5.5.
 type ExpDir int
 
-// 5.5 Expandable Direction
+// 5.5 Expandable Direction.
 const (
 	ExpDirUnknown    ExpDir = 0
 	ExpDirLeft       ExpDir = 1
@@ -491,7 +491,7 @@ const (
 // APIFramework as defined in section 5.6.
 type APIFramework int
 
-// 5.6 API Frameworks
+// 5.6 API Frameworks.
 const (
 	APIFrameworkUnknown APIFramework = 0
 	APIFrameworkVPAID1  APIFramework = 1
@@ -504,7 +504,7 @@ const (
 // VideoLinearity as defined in section 5.7.
 type VideoLinearity int
 
-// 5.7 Video Linearity
+// 5.7 Video Linearity.
 const (
 	VideoLinearityUnknown   VideoLinearity = 0
 	VideoLinearityLinear    VideoLinearity = 1
@@ -532,7 +532,7 @@ const (
 // VideoPlacement as defined in section 5.9.
 type VideoPlacement int
 
-// Video Placement Types
+// Video Placement Types.
 const (
 	VideoPlacementUnknown      VideoPlacement = 0
 	VideoPlacementInStream     VideoPlacement = 1
@@ -545,7 +545,7 @@ const (
 // VideoPlayback as defined in section 5.10.
 type VideoPlayback int
 
-// 5.10 Video Playback Methods
+// 5.10 Video Playback Methods.
 const (
 	VideoPlaybackUnknown          VideoPlayback = 0
 	VideoPlaybackPageLoadSoundOn  VideoPlayback = 1
@@ -559,7 +559,7 @@ const (
 // StartDelay as defined in section 5.12.
 type StartDelay int
 
-// 5.12 Video Start Delay
+// 5.12 Video Start Delay.
 const (
 	StartDelayPreRoll         StartDelay = 0
 	StartDelayGenericMidRoll  StartDelay = -1
@@ -569,7 +569,7 @@ const (
 // ProductionQuality as defined in section 5.13.
 type ProductionQuality int
 
-// 5.13 Video Quality
+// 5.13 Video Quality.
 const (
 	ProductionQualityUnknown      ProductionQuality = 0
 	ProductionQualityProfessional ProductionQuality = 1
@@ -580,7 +580,7 @@ const (
 // CompanionType as defined in section 5.14.
 type CompanionType int
 
-// 5.14  Companion Types
+// 5.14  Companion Types.
 const (
 	CompanionTypeUnknown CompanionType = 0
 	CompanionTypeStatic  CompanionType = 1
@@ -591,7 +591,7 @@ const (
 // ContentDelivery as defined in section 5.15.
 type ContentDelivery int
 
-// 5.15 Content Delivery Methods
+// 5.15 Content Delivery Methods.
 const (
 	ContentDeliveryUnknown     ContentDelivery = 0
 	ContentDeliveryStreaming   ContentDelivery = 1
@@ -602,7 +602,7 @@ const (
 // FeedType as defined in section 5.16.
 type FeedType int
 
-// 5.16 Feed Types
+// 5.16 Feed Types.
 const (
 	FeedTypeUnknown   FeedType = 0
 	FeedTypeMusic     FeedType = 1
@@ -613,7 +613,7 @@ const (
 // VolumeNorm as defined in section 5.17.
 type VolumeNorm int
 
-// 5.17 Volume Normalization Modes
+// 5.17 Volume Normalization Modes.
 const (
 	VolumeNormNone     VolumeNorm = 0
 	VolumeNormAverage  VolumeNorm = 1
@@ -678,7 +678,7 @@ const (
 // DeviceType as defined in section 5.21.
 type DeviceType int
 
-// 5.21 Device Type
+// 5.21 Device Type.
 const (
 	DeviceTypeUnknown   DeviceType = 0
 	DeviceTypeMobile    DeviceType = 1
@@ -693,7 +693,7 @@ const (
 // ConnType as defined in section 5.22.
 type ConnType int
 
-// 5.22 Connection Type
+// 5.22 Connection Type.
 const (
 	ConnTypeUnknown  ConnType = 0
 	ConnTypeEthernet ConnType = 1
@@ -707,7 +707,7 @@ const (
 // IPLocation as defined in section 5.23.
 type IPLocation int
 
-// 5.22 IP Location Services
+// 5.22 IP Location Services.
 const (
 	IPLocationUnknown     IPLocation = 0
 	IPLocationIP2Location IPLocation = 1
@@ -719,7 +719,7 @@ const (
 // NBR as defined in section 5.24.
 type NBR int
 
-// 5.24 No-Bid Reason Codes
+// 5.24 No-Bid Reason Codes.
 const (
 	NBRUnknownError      NBR = 0
 	NBRTechnicalError    NBR = 1

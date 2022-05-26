@@ -45,7 +45,7 @@ type Video struct {
 
 type jsonVideo Video
 
-// Validate the object
+// Validate the object.
 func (v *Video) Validate() error {
 	if len(v.MIMEs) == 0 {
 		return ErrInvalidVideoNoMIMEs
