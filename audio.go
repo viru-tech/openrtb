@@ -43,7 +43,7 @@ func (a *Audio) Validate() error {
 	return nil
 }
 
-// MarshalJSON custom marshalling with normalization.
+// MarshalJSON custom marshaling with normalization.
 func (a *Audio) MarshalJSON() ([]byte, error) {
 	a.normalize()
 	return json.Marshal((*jsonAudio)(a))

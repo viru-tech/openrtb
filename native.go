@@ -28,6 +28,7 @@ var (
 	nullBytes    = []byte("null")
 )
 
+// UnmarshalJSON implements json.Unmarshaler.
 func (n *Native) UnmarshalJSON(data []byte) error {
 	if bytes.Equal(data, nullBytes) {
 		return nil

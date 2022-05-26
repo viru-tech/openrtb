@@ -38,5 +38,4 @@ var _ = Describe("Impression", func() {
 		Expect((&Impression{ID: "IMPID", Banner: &Banner{}, Video: &Video{}}).Validate()).To(Equal(ErrInvalidImpMultiAssets))
 		Expect((&Impression{ID: "IMPID", Banner: &Banner{}}).Validate()).NotTo(HaveOccurred())
 	})
-
 })
