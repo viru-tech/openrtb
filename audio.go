@@ -12,25 +12,40 @@ var (
 
 // Audio object must be included directly in the impression object.
 type Audio struct {
-	MIMEs          []string            `json:"mimes"`                 // Content MIME types supported.
-	MinDuration    int                 `json:"minduration,omitempty"` // Minimum video ad duration in seconds
-	MaxDuration    int                 `json:"maxduration,omitempty"` // Maximum video ad duration in seconds
-	Protocols      []Protocol          `json:"protocols,omitempty"`   // Video bid response protocols
-	StartDelay     StartDelay          `json:"startdelay,omitempty"`  // Indicates the start delay in seconds
-	Sequence       int                 `json:"sequence,omitempty"`    // Default: 1
-	BlockedAttrs   []CreativeAttribute `json:"battr,omitempty"`       // Blocked creative attributes
-	MaxExtended    int                 `json:"maxextended,omitempty"` // Maximum extended video ad duration
-	MinBitrate     int                 `json:"minbitrate,omitempty"`  // Minimum bit rate in Kbps
-	MaxBitrate     int                 `json:"maxbitrate,omitempty"`  // Maximum bit rate in Kbps
-	Delivery       []ContentDelivery   `json:"delivery,omitempty"`    // List of supported delivery methods
-	CompanionAds   []Banner            `json:"companionad,omitempty"`
-	APIs           []APIFramework      `json:"api,omitempty"`
-	CompanionTypes []CompanionType     `json:"companiontype,omitempty"`
-	MaxSequence    int                 `json:"maxseq,omitempty"`   // The maximumnumber of ads that canbe played in an ad pod.
-	Feed           FeedType            `json:"feed,omitempty"`     // Type of audio feed.
-	Stitched       int                 `json:"stitched,omitempty"` // Indicates if the ad is stitched with audio content or delivered independently
-	VolumeNorm     VolumeNorm          `json:"nvol,omitempty"`     // Volume normalization mode.
-	Ext            json.RawMessage     `json:"ext,omitempty"`
+	// Content MIME types supported.
+	MIMEs []string `json:"mimes"`
+	// Video bid response protocols.
+	Protocols []Protocol `json:"protocols,omitempty"`
+	// Blocked creative attributes.
+	BlockedAttrs []CreativeAttribute `json:"battr,omitempty"`
+	// List of supported delivery methods.
+	Delivery       []ContentDelivery `json:"delivery,omitempty"`
+	CompanionAds   []Banner          `json:"companionad,omitempty"`
+	APIs           []APIFramework    `json:"api,omitempty"`
+	CompanionTypes []CompanionType   `json:"companiontype,omitempty"`
+	Ext            json.RawMessage   `json:"ext,omitempty"`
+	// Minimum video ad duration in seconds.
+	MinDuration int `json:"minduration,omitempty"`
+	// Maximum video ad duration in seconds.
+	MaxDuration int `json:"maxduration,omitempty"`
+	// Indicates the start delay in seconds.
+	StartDelay StartDelay `json:"startdelay,omitempty"`
+	// Default: 1.
+	Sequence int `json:"sequence,omitempty"`
+	// Maximum extended video ad duration.
+	MaxExtended int `json:"maxextended,omitempty"`
+	// Minimum bit rate in Kbps.
+	MinBitrate int `json:"minbitrate,omitempty"`
+	// Maximum bit rate in Kbps.
+	MaxBitrate int `json:"maxbitrate,omitempty"`
+	// The maximum number of ads that can be played in an ad pod.
+	MaxSequence int `json:"maxseq,omitempty"`
+	// Type of audio feed.
+	Feed FeedType `json:"feed,omitempty"`
+	// Indicates if the ad is stitched with audio content or delivered independently.
+	Stitched int `json:"stitched,omitempty"`
+	// Volume normalization mode.
+	VolumeNorm VolumeNorm `json:"nvol,omitempty"`
 }
 
 type jsonAudio Audio
