@@ -22,7 +22,7 @@ const (
 	DataTypePrice DataTypeID = 6
 	// DataTypeSalePrice is used for sale price, that can be used together
 	// with price to indicate a discounted price compared to a regular price.
-	// Value should include currency symbol in localised format.
+	// Value should include currency symbol in localized format.
 	DataTypeSalePrice DataTypeID = 7
 	// DataTypePhone is used for phone number.
 	DataTypePhone DataTypeID = 8
