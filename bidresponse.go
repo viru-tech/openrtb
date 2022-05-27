@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidRespNoID       = errors.New("openrtb: response missing ID")
 	ErrInvalidRespNoSeatBids = errors.New("openrtb: response missing seatbids")

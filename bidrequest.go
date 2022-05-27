@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidReqNoID     = errors.New("openrtb: request ID missing")
 	ErrInvalidReqNoImps   = errors.New("openrtb: request has no impressions")
@@ -42,9 +42,11 @@ type BidRequest struct {
 func (req *BidRequest) Validate() error {
 	if req.ID == "" {
 		return ErrInvalidReqNoID
-	} else if len(req.Impressions) == 0 {
+	}
+	if len(req.Impressions) == 0 {
 		return ErrInvalidReqNoImps
-	} else if req.Site != nil && req.App != nil {
+	}
+	if req.Site != nil && req.App != nil {
 		return ErrInvalidReqMultiInv
 	}
 

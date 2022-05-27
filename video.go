@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-// Validation errors
+// Validation errors.
 var (
 	ErrInvalidVideoNoMIMEs     = errors.New("openrtb: video has no mimes")
 	ErrInvalidVideoNoLinearity = errors.New("openrtb: video linearity missing")
@@ -49,15 +49,17 @@ type jsonVideo Video
 func (v *Video) Validate() error {
 	if len(v.MIMEs) == 0 {
 		return ErrInvalidVideoNoMIMEs
-	} else if v.Linearity == 0 {
+	}
+	if v.Linearity == 0 {
 		return ErrInvalidVideoNoLinearity
-	} else if v.Protocol == 0 && len(v.Protocols) == 0 {
+	}
+	if v.Protocol == 0 && len(v.Protocols) == 0 {
 		return ErrInvalidVideoNoProtocols
 	}
 	return nil
 }
 
-// GetBoxingAllowed returns the boxing-allowed indicator
+// GetBoxingAllowed returns the boxing-allowed indicator.
 func (v *Video) GetBoxingAllowed() int {
 	if v.BoxingAllowed != nil {
 		return *v.BoxingAllowed
@@ -65,13 +67,13 @@ func (v *Video) GetBoxingAllowed() int {
 	return 1
 }
 
-// MarshalJSON custom marshalling with normalization
+// MarshalJSON custom marshaling with normalization.
 func (v *Video) MarshalJSON() ([]byte, error) {
 	v.normalize()
 	return json.Marshal((*jsonVideo)(v))
 }
 
-// UnmarshalJSON custom unmarshalling with normalization
+// UnmarshalJSON custom unmarshaling with normalization.
 func (v *Video) UnmarshalJSON(data []byte) error {
 	var h jsonVideo
 	if err := json.Unmarshal(data, &h); err != nil {
