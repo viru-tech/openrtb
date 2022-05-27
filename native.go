@@ -13,11 +13,15 @@ import (
 // banner and/or video by also including as Imp subordinates the Banner and/or Video objects,
 // respectively. However, any given bid for the impression must conform to one of the offered types.
 type Native struct {
-	Request      json.RawMessage     `json:"request"`         // Request payload complying with the Native Ad Specification.
-	Version      string              `json:"ver,omitempty"`   // Version of the Native Ad Specification to which request complies; highly recommended for efficient parsing.
-	APIs         []APIFramework      `json:"api,omitempty"`   // List of supported API frameworks for this impression.
-	BlockedAttrs []CreativeAttribute `json:"battr,omitempty"` // Blocked creative attributes
-	Ext          json.RawMessage     `json:"ext,omitempty"`
+	// Version of the Native Ad Specification to which request complies; highly recommended for efficient parsing.
+	Version string `json:"ver,omitempty"`
+	// List of supported API frameworks for this impression.
+	APIs []APIFramework `json:"api,omitempty"`
+	// Blocked creative attributes.
+	BlockedAttrs []CreativeAttribute `json:"battr,omitempty"`
+	// Request payload complying with the Native Ad Specification.
+	Request json.RawMessage `json:"request"`
+	Ext     json.RawMessage `json:"ext,omitempty"`
 }
 
 type jsonNative Native

@@ -106,14 +106,16 @@ var _ = Describe("Request", func() {
 					},
 				},
 			},
+			IsWrapped: true,
 		}))
 	})
 
 	It("should parse json string correctly", func() {
 		req := fixture("testdata/request3.json")
 		Expect(req).To(Equal(&Request{
-			Version: "1.0",
-			Assets:  []Asset{},
+			Version:   "1.0",
+			Assets:    []Asset{},
+			IsWrapped: true,
 		}))
 	})
 
