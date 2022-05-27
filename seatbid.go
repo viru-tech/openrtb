@@ -23,7 +23,7 @@ var (
 	ErrInvalidSeatBidBid = errors.New("openrtb: seatbid is missing bids")
 )
 
-// Validate required attributes
+// Validate required attributes.
 func (sb *SeatBid) Validate() error {
 	if len(sb.Bids) == 0 {
 		return ErrInvalidSeatBidBid

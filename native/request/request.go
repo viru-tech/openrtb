@@ -99,9 +99,20 @@ var (
 	nullBytes   = []byte("null")
 )
 
+// UnmarshalJSON implements json.Unmarshaler.
 func (r *Request) UnmarshalJSON(data []byte) error {
 	if bytes.Equal(data, nullBytes) {
 		return nil
+	}
+
+	if len(data) >= 2 && data[0] == '"' && data[len(data)-1] == '"' {
+		// this must be a quoted string
+		var jsonS string
+		if err := json.Unmarshal(data, &jsonS); err != nil {
+			return err
+		}
+
+		data = []byte(jsonS)
 	}
 
 	if bytes.Contains(data, nativeBytes) {

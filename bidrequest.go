@@ -38,7 +38,7 @@ type BidRequest struct {
 	Ext               json.RawMessage   `json:"ext,omitempty"`
 }
 
-// Validate the request
+// Validate validates the bid request.
 func (req *BidRequest) Validate() error {
 	if req.ID == "" {
 		return ErrInvalidReqNoID

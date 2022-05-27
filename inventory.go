@@ -2,7 +2,7 @@ package openrtb
 
 import "encoding/json"
 
-// Inventory contains inventory specific attributes
+// Inventory contains inventory specific attributes.
 type Inventory struct {
 	ID                string            `json:"id,omitempty"` // ID on the exchange
 	Name              string            `json:"name,omitempty"`
@@ -17,7 +17,7 @@ type Inventory struct {
 	Ext               json.RawMessage   `json:"ext,omitempty"`
 }
 
-// GetPrivacyPolicy returns the privacy policy value
+// GetPrivacyPolicy returns the privacy policy value.
 func (a *Inventory) GetPrivacyPolicy() int {
 	if a.PrivacyPolicy != nil {
 		return *a.PrivacyPolicy
