@@ -37,8 +37,27 @@ var _ = Describe("Video", func() {
 			Delivery:        []ContentDelivery{ContentDeliveryProgressive},
 			Position:        AdPositionAboveFold,
 			CompanionAds: []Banner{
-				{Width: 300, Height: 250, ID: "1234567893-1", Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated, CreativeAttributeWindowsDialogOrAlert}, ExpDirs: []ExpDir{ExpDirRight, ExpDirDown}},
-				{Width: 728, Height: 90, ID: "1234567893-2", Position: AdPositionAboveFold, BlockedAttrs: []CreativeAttribute{CreativeAttributeUserInitiated, CreativeAttributeWindowsDialogOrAlert}},
+				{
+					Width:    300,
+					Height:   250,
+					ID:       "1234567893-1",
+					Position: AdPositionAboveFold,
+					BlockedAttrs: []CreativeAttribute{
+						CreativeAttributeUserInitiated,
+						CreativeAttributeWindowsDialogOrAlert,
+					},
+					ExpDirs: []ExpDir{ExpDirRight, ExpDirDown},
+				},
+				{
+					Width:    728,
+					Height:   90,
+					ID:       "1234567893-2",
+					Position: AdPositionAboveFold,
+					BlockedAttrs: []CreativeAttribute{
+						CreativeAttributeUserInitiated,
+						CreativeAttributeWindowsDialogOrAlert,
+					},
+				},
 			},
 			Placement:      VideoPlacementInStream,
 			APIs:           []APIFramework{APIFrameworkVPAID1, APIFrameworkVPAID2},

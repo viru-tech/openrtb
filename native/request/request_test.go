@@ -5,9 +5,10 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/bsm/openrtb/v3"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+
+	"github.com/viru-tech/openrtb/v3"
 )
 
 var _ = Describe("Request", func() {

@@ -15,32 +15,55 @@ var (
 // Video object must be included directly in the impression object if the impression offered
 // for auction is an in-stream video ad opportunity.
 type Video struct {
-	MIMEs           []string            `json:"mimes,omitempty"`          // Content MIME types supported.
-	MinDuration     int                 `json:"minduration,omitempty"`    // Minimum video ad duration in seconds
-	MaxDuration     int                 `json:"maxduration,omitempty"`    // Maximum video ad duration in seconds
-	Protocols       []Protocol          `json:"protocols,omitempty"`      // Video bid response protocols
-	Protocol        Protocol            `json:"protocol,omitempty"`       // Video bid response protocols DEPRECATED
-	Width           int                 `json:"w,omitempty"`              // Width of the player in pixels
-	Height          int                 `json:"h,omitempty"`              // Height of the player in pixels
-	StartDelay      StartDelay          `json:"startdelay,omitempty"`     // Indicates the start delay in seconds
-	Linearity       VideoLinearity      `json:"linearity,omitempty"`      // Indicates whether the ad impression is linear or non-linear
-	Skip            int                 `json:"skip,omitempty"`           // Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
-	SkipMin         int                 `json:"skipmin,omitempty"`        // Videos of total duration greater than this number of seconds can be skippable
-	SkipAfter       int                 `json:"skipafter,omitempty"`      // Number of seconds a video must play before skipping is enabled
-	Sequence        int                 `json:"sequence,omitempty"`       // Default: 1
-	BlockedAttrs    []CreativeAttribute `json:"battr,omitempty"`          // Blocked creative attributes
-	MaxExtended     int                 `json:"maxextended,omitempty"`    // Maximum extended video ad duration
-	MinBitrate      int                 `json:"minbitrate,omitempty"`     // Minimum bit rate in Kbps
-	MaxBitrate      int                 `json:"maxbitrate,omitempty"`     // Maximum bit rate in Kbps
-	BoxingAllowed   *int                `json:"boxingallowed,omitempty"`  // If exchange publisher has rules preventing letter boxing
-	PlaybackMethods []VideoPlayback     `json:"playbackmethod,omitempty"` // List of allowed playback methods
-	Delivery        []ContentDelivery   `json:"delivery,omitempty"`       // List of supported delivery methods
-	Position        AdPosition          `json:"pos,omitempty"`            // Ad Position
-	CompanionAds    []Banner            `json:"companionad,omitempty"`
-	APIs            []APIFramework      `json:"api,omitempty"` // List of supported API frameworks
-	CompanionTypes  []CompanionType     `json:"companiontype,omitempty"`
-	Placement       VideoPlacement      `json:"placement,omitempty"` // Video placement type
-	Ext             json.RawMessage     `json:"ext,omitempty"`
+	// If exchange publisher has rules preventing letter boxing.
+	BoxingAllowed *int `json:"boxingallowed,omitempty"`
+	// List of allowed playback methods.
+	PlaybackMethods []VideoPlayback `json:"playbackmethod,omitempty"`
+	// List of supported delivery methods.
+	Delivery []ContentDelivery `json:"delivery,omitempty"`
+	// Content MIME types supported..
+	MIMEs []string `json:"mimes,omitempty"`
+	// Video bid response protocols.
+	Protocols []Protocol `json:"protocols,omitempty"`
+	// Blocked creative attributes.
+	BlockedAttrs []CreativeAttribute `json:"battr,omitempty"`
+	CompanionAds []Banner            `json:"companionad,omitempty"`
+	// List of supported API frameworks.
+	APIs           []APIFramework  `json:"api,omitempty"`
+	CompanionTypes []CompanionType `json:"companiontype,omitempty"`
+	Ext            json.RawMessage `json:"ext,omitempty"`
+	// Deprecated. Video bid response protocols.
+	Protocol Protocol `json:"protocol,omitempty"`
+	// Minimum video ad duration in seconds.
+	MinDuration int `json:"minduration,omitempty"`
+	// Maximum video ad duration in seconds.
+	MaxDuration int `json:"maxduration,omitempty"`
+	// Width of the player in pixels.
+	Width int `json:"w,omitempty"`
+	// Height of the player in pixels.
+	Height int `json:"h,omitempty"`
+	// Indicates the start delay in seconds.
+	StartDelay StartDelay `json:"startdelay,omitempty"`
+	// Indicates whether the ad impression is linear or non-linear.
+	Linearity VideoLinearity `json:"linearity,omitempty"`
+	// Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
+	Skip int `json:"skip,omitempty"`
+	// Videos of total duration greater than this number of seconds can be skippable.
+	SkipMin int `json:"skipmin,omitempty"`
+	// Number of seconds a video must play before skipping is enabled.
+	SkipAfter int `json:"skipafter,omitempty"`
+	// Default: 1.
+	Sequence int `json:"sequence,omitempty"`
+	// Maximum extended video ad duration.
+	MaxExtended int `json:"maxextended,omitempty"`
+	// Minimum bit rate in Kbps.
+	MinBitrate int `json:"minbitrate,omitempty"`
+	// Maximum bit rate in Kbps.
+	MaxBitrate int `json:"maxbitrate,omitempty"`
+	// Ad Position.
+	Position AdPosition `json:"pos,omitempty"`
+	// Video placement type.
+	Placement VideoPlacement `json:"placement,omitempty"`
 }
 
 type jsonVideo Video

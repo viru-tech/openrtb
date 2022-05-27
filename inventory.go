@@ -29,19 +29,19 @@ func (a *Inventory) GetPrivacyPolicy() int {
 // (as opposed to a mobile website).  A bid request must not contain both an "app" object and a
 // "site" object.
 type App struct {
-	Inventory
 	Bundle   string `json:"bundle,omitempty"`   // App bundle or package name
 	StoreURL string `json:"storeurl,omitempty"` // App store URL for an installed app
 	Version  string `json:"ver,omitempty"`      // App version
-	Paid     int    `json:"paid,omitempty"`     // "1": Paid, "2": Free
+	Inventory
+	Paid int `json:"paid,omitempty"` // "1": Paid, "2": Free
 }
 
 // Site object should be included if the ad supported content is part of a website (as opposed to
 // an application).  A bid request must not contain both a site object and an app object.
 type Site struct {
-	Inventory
 	Page     string `json:"page,omitempty"`   // URL of the page.
 	Referrer string `json:"ref,omitempty"`    // Referrer URL.
 	Search   string `json:"search,omitempty"` // Search string that caused naviation.
-	Mobile   int    `json:"mobile,omitempty"` // Mobile ("1": site is mobile optimized).
+	Inventory
+	Mobile int `json:"mobile,omitempty"` // Mobile ("1": site is mobile optimized).
 }

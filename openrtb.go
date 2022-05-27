@@ -768,20 +768,31 @@ type Producer ThirdParty
 // (such as IP geo lookup), or by user registration information (for example provided to a publisher
 // through a user registration).
 type Geo struct {
-	Latitude      float64         `json:"lat,omitempty"`           // Latitude from -90 to 90
-	Longitude     float64         `json:"lon,omitempty"`           // Longitude from -180 to 180
-	Type          LocationType    `json:"type,omitempty"`          // Indicate the source of the geo data
-	Accuracy      int             `json:"accuracy,omitempty"`      // Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services
-	LastFix       int             `json:"lastfix,omitempty"`       // Number of seconds since this geolocation fix was established.
-	IPService     IPLocation      `json:"ipservice,omitempty"`     // Service or provider used to determine geolocation from IP address if applicable
-	Country       string          `json:"country,omitempty"`       // Country using ISO 3166-1 Alpha 3
-	Region        string          `json:"region,omitempty"`        // Region using ISO 3166-2
-	RegionFIPS104 string          `json:"regionFIPS104,omitempty"` // Region of a country using FIPS 10-4
+	// Country using ISO 3166-1 Alpha 3.
+	Country string `json:"country,omitempty"`
+	// Region using ISO 3166-2.
+	Region string `json:"region,omitempty"`
+	// Region of a country using FIPS 10-4.
+	RegionFIPS104 string          `json:"regionFIPS104,omitempty"`
 	Metro         string          `json:"metro,omitempty"`
 	City          string          `json:"city,omitempty"`
 	ZIP           string          `json:"zip,omitempty"`
-	UTCOffset     int             `json:"utcoffset,omitempty"` // Local time as the number +/- of minutes from UTC
 	Ext           json.RawMessage `json:"ext,omitempty"`
+	// Latitude from -90 to 90.
+	Latitude float64 `json:"lat,omitempty"`
+	// Longitude from -180 to 180.
+	Longitude float64 `json:"lon,omitempty"`
+	// Indicate the source of the geo data.
+	Type LocationType `json:"type,omitempty"`
+	// Estimated location accuracy in meters; recommended when lat/lon
+	// are specified and derived from a device’s location services.
+	Accuracy int `json:"accuracy,omitempty"`
+	// Number of seconds since this geolocation fix was established.
+	LastFix int `json:"lastfix,omitempty"`
+	// Service or provider used to determine geolocation from IP address if applicable.
+	IPService IPLocation `json:"ipservice,omitempty"`
+	// Local time as the number +/- of minutes from UTC.
+	UTCOffset int `json:"utcoffset,omitempty"`
 }
 
 // User object contains information known or derived about the human user of the device (i.e., the
@@ -789,16 +800,27 @@ type Geo struct {
 // privacy policies. However, this user ID must be stable long enough to serve reasonably as the basis for
 // frequency capping and retargeting.
 type User struct {
-	ID          string          `json:"id,omitempty"`         // Unique consumer ID of this user on the exchange
-	BuyerID     string          `json:"buyerid,omitempty"`    // Buyer-specific ID for the user as mapped by the exchange for the buyer. At least one of buyeruid/buyerid or id is recommended. Valid for OpenRTB 2.3.
-	BuyerUID    string          `json:"buyeruid,omitempty"`   // Buyer-specific ID for the user as mapped by the exchange for the buyer. Same as BuyerID but valid for OpenRTB 2.2.
-	YearOfBirth int             `json:"yob,omitempty"`        // Year of birth as a 4-digit integer.
-	Gender      string          `json:"gender,omitempty"`     // Gender ("M": male, "F" female, "O" Other)
-	Keywords    string          `json:"keywords,omitempty"`   // Comma separated list of keywords, interests, or intent
-	CustomData  string          `json:"customdata,omitempty"` // Optional feature to pass bidder data that was set in the exchange's cookie. The string must be in base85 cookie safe characters and be in any format. Proper JSON encoding must be used to include "escaped" quotation marks.
-	Geo         *Geo            `json:"geo,omitempty"`
-	Data        []Data          `json:"data,omitempty"`
-	Ext         json.RawMessage `json:"ext,omitempty"`
+	Geo *Geo `json:"geo,omitempty"`
+	// Unique consumer ID of this user on the exchange.
+	ID string `json:"id,omitempty"`
+	// Buyer-specific ID for the user as mapped by the exchange for the buyer.
+	// At least one of buyeruid/buyerid or id is recommended. Valid for OpenRTB 2.3.
+	BuyerID string `json:"buyerid,omitempty"`
+	// Buyer-specific ID for the user as mapped by the exchange for the buyer.
+	// Same as BuyerID but valid for OpenRTB 2.2.
+	BuyerUID string `json:"buyeruid,omitempty"`
+	// Gender ("M": male, "F" female, "O" Other).
+	Gender string `json:"gender,omitempty"`
+	// Comma separated list of keywords, interests, or intent.
+	Keywords string `json:"keywords,omitempty"`
+	// Optional feature to pass bidder data that was set in the exchange's cookie.
+	// The string must be in base85 cookie safe characters and be in any format.
+	// Proper JSON encoding must be used to include "escaped" quotation marks.
+	CustomData string          `json:"customdata,omitempty"`
+	Data       []Data          `json:"data,omitempty"`
+	Ext        json.RawMessage `json:"ext,omitempty"`
+	// Year of birth as a 4-digit integer.
+	YearOfBirth int `json:"yob,omitempty"`
 }
 
 // Data and segment objects together allow additional data about the user to be specified. This data
@@ -835,7 +857,7 @@ type Regulations struct {
 // Format object represents an allowed size (i.e., height and width combination) for a banner impression.
 // These are typically used in an array for an impression where multiple sizes are permitted.
 type Format struct {
+	Ext    json.RawMessage `json:"ext,omitempty"`
 	Width  int             `json:"w,omitempty"` // Width in device independent pixels (DIPS).
 	Height int             `json:"h,omitempty"` // Height in device independent pixels (DIPS).
-	Ext    json.RawMessage `json:"ext,omitempty"`
 }

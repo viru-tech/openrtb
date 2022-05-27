@@ -22,7 +22,7 @@ const (
 	DataTypePrice DataTypeID = 6
 	// DataTypeSalePrice is used for sale price, that can be used together
 	// with price to indicate a discounted price compared to a regular price.
-	// Value should include currency symbol in localised format.
+	// Value should include currency symbol in localized format.
 	DataTypeSalePrice DataTypeID = 7
 	// DataTypePhone is used for phone number.
 	DataTypePhone DataTypeID = 8
@@ -42,7 +42,10 @@ const (
 
 // Data is the native data object.
 type Data struct {
-	Ext    json.RawMessage `json:"ext,omitempty"`
-	TypeID DataTypeID      `json:"type"` // Type ID of the element supported by the publisher. The publisher can display this information in an appropriate format
-	Length int             `json:"len"`  // Maximum length of the text in the element’s response
+	Ext json.RawMessage `json:"ext,omitempty"`
+	// Type ID of the element supported by the publisher.
+	// The publisher can display this information in an appropriate format.
+	TypeID DataTypeID `json:"type"`
+	// Maximum length of the text in the element’s response.
+	Length int `json:"len"`
 }
