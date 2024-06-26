@@ -21,4 +21,6 @@ type Response struct {
 	// executed at impression time, where it can be supported.
 	JSTracker string          `json:"jstracker,omitempty"`
 	Ext       json.RawMessage `json:"ext,omitempty"`
+	// Array of tracking objects to run with the ad.
+	EventTrackers []EventTracker `json:"eventtrackers,omitempty"`
 }
